@@ -1,0 +1,4 @@
+node_modules/
+out/
+object/*.html
+motion/motion.html

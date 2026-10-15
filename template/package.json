@@ -1,0 +1,16 @@
+{
+  "name": "anatomy-reveal-project",
+  "private": true,
+  "description": "An object built as an Anatomy figure, with its interactive page and its reveal film.",
+  "scripts": {
+    "test-page": "node object/test-page.mjs --light",
+    "figure": "node object/build.mjs && node object/build.mjs --light",
+    "film": "node motion/build.mjs",
+    "check": "node object/scan-apart.mjs -35 15 && node object/scan-apart.mjs 0 5 && node object/scan-apart.mjs 140 20 && node object/scan-apart.mjs 90 -20 && node object/scan-apart.mjs -20 70 && node motion/scan.mjs",
+    "render": "node motion/render.mjs blur out/blur --step 4 --most 40",
+    "encode": "node motion/encode.mjs out/blur out/film.mp4"
+  },
+  "dependencies": {
+    "puppeteer-core": "^23.0.0"
+  }
+}

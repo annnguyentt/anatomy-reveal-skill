@@ -1,0 +1,16 @@
+import { launch } from "../scripts/browser.mjs";
+import { pathToFileURL } from "node:url";
+import { resolve } from "node:path";
+const [file, out, state, width = "760"] = process.argv.slice(2);
+const browser = await launch();
+const page = await browser.newPage();
+await page.setViewport({ width: Number(width), height: 1e3, deviceScaleFactor: 2 });
+page.on("pageerror", (e) => console.log("pageerror:", e.message));
+page.on("console", (m) => m.type() === "error" && console.log("console:", m.text()));
+await page.emulateMediaFeatures([{ name: "prefers-reduced-motion", value: "reduce" }]);
+await page.goto(pathToFileURL(resolve(file)).href);
+await page.waitForFunction(() => window.__anatomy);
+if (state) await page.evaluate((s) => window.__anatomy.set(JSON.parse(s)), state);
+const fig = await page.$(".iso-figure");
+await fig.screenshot({ path: out });
+await browser.close();

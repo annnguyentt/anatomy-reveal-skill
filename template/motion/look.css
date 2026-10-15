@@ -1,0 +1,21 @@
+html,body{margin:0;background:#f1ece2}
+.iso-page{margin:0!important;width:var(--mo-w)!important}
+.mo{position:relative;width:var(--mo-w);height:var(--mo-h);overflow:hidden;background:#f1ece2;--anatomy-weight:.62px}
+.mo .mo-bg{position:absolute;inset:-10%;background:radial-gradient(var(--gr,62%) var(--gr,62%) at var(--gx,50%) var(--gy,45%),rgba(255,253,247,.85),rgba(255,253,247,0) 75%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .36 0 0 0 0 .28 0 0 0 .1 0'/%3E%3C/filter%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.004 .09' numOctaves='2' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .44 0 0 0 0 .36 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E"),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='540' height='960'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.006' numOctaves='3' seed='3'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .48 0 0 0 0 .38 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)'/%3E%3C/svg%3E"),#f1ece2;background-size:auto,320px 320px,var(--mo-w) var(--mo-h),auto}
+.mo .mo-vignette{position:absolute;inset:0;background:radial-gradient(125% 95% at 50% 50%,transparent 58%,rgba(110,90,60,.14) 100%);pointer-events:none}
+.mo .iso-stage{position:absolute;inset:0;width:var(--mo-w);height:var(--mo-h)}
+.mo .iso-svg{width:var(--mo-w);height:var(--mo-h)}
+.mo .iso-face-text[data-tone="lit"]{fill:var(--anatomy-lit)}
+.mo .iso-face-text[data-tone="mid"]{fill:var(--anatomy-mid)}
+.mo .mo-plate{position:absolute;inset:26px 24px;pointer-events:none;border:1px solid rgba(60,50,38,.2)}
+.mo .mo-corner{position:absolute;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:10.5px;line-height:1;letter-spacing:.1em;white-space:nowrap;color:rgba(60,52,42,.62);text-transform:uppercase}
+.mo .mo-corner[data-c="fig"]{top:14px;left:14px;text-transform:none;letter-spacing:.04em;color:rgba(34,30,26,.85)}
+.mo .mo-corner[data-c="title"]{top:14px;right:14px}
+.mo .mo-corner[data-c="hint"]{bottom:14px;left:14px}
+.mo .mo-corner[data-c="readout"]{bottom:14px;right:14px;text-transform:none;letter-spacing:.04em;color:rgba(34,30,26,.85);font-variant-numeric:tabular-nums}
+.mo .mo-tick{position:absolute;width:9px;height:9px;border-color:rgba(60,50,38,.5);border-style:solid;border-width:0}
+.mo .mo-tick[data-c="tl"]{top:-1px;left:-1px;border-top-width:1px;border-left-width:1px}
+.mo .mo-tick[data-c="tr"]{top:-1px;right:-1px;border-top-width:1px;border-right-width:1px}
+.mo .mo-tick[data-c="bl"]{bottom:-1px;left:-1px;border-bottom-width:1px;border-left-width:1px}
+.mo .mo-tick[data-c="br"]{bottom:-1px;right:-1px;border-bottom-width:1px;border-right-width:1px}
+.mo[data-plate="off"] .mo-plate{display:none}
